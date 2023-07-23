@@ -35,8 +35,16 @@ public class MapDemo {
 
         for(Map.Entry m: map.entrySet()){
             System.out.println(m.getKey()+":"+m.getValue());
-
         }
+
+        map.remove(100);
+        System.out.println("After removing: "+ map);
+
+        map.replace(200,"White"); // through key we are replacing value
+        System.out.println("after replacing with white"+map);
+
+        map.replace(101,"Red","Blackpink");
+        System.out.println("Check:"+map);
     }
 
 
