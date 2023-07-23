@@ -50,6 +50,12 @@ public class MapDemo {
 
         Collection<String> values = map.values(); // collection does not have to be unique
         System.out.println("Collection view of values"+values);
+
+        boolean entryKey = map.containsKey(200);
+        System.out.println(entryKey);
+
+        boolean entryValue = map.containsValue("Goldens");
+        System.out.println(entryValue);
     }
 
 
