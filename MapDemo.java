@@ -1,8 +1,7 @@
 package map;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
+
 
 public class MapDemo {
     public static void main(String[] args) {
@@ -45,6 +44,12 @@ public class MapDemo {
 
         map.replace(101,"Red","Blackpink");
         System.out.println("Check:"+map);
+
+        Set<Integer> keys = map.keySet(); // used set because set cannot have repeating element
+        System.out.println("Set view of keys: "+keys);
+
+        Collection<String> values = map.values(); // collection does not have to be unique
+        System.out.println("Collection view of values"+values);
     }
 
 
