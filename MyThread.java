@@ -21,8 +21,8 @@ public class MyThread extends Thread{
     }
 
     public static void main(String[] args) {
-        MyThread Thread1= new MyThread("Cut the ticket.");
-        MyThread Thread2 = new MyThread("Show the seat number");
+        MyThread mythread1= new MyThread("Cut the ticket.");
+        MyThread mythread2 = new MyThread("Show the seat number");
 
         Thread t1 = new Thread(Thread1);
         Thread t2 = new Thread(Thread2);
