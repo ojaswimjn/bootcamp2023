@@ -1,34 +1,34 @@
 package thread;
 
-public class MyThread implements Runnable{
+public class MyThread extends Thread{
+    String task;
 
-    int a = 20, b= 10;
+    MyThread(String task){
+        this.task=task;
+    }
 
     @Override
     public void run() {
-        addition();
-        subtraction();
-        multiplication();
-    }
+        for(int i = 1 ; i<=5; i++){
+            System.out.println(task +":"+ i );
+            try{
+                Thread.sleep(1000);
+            }catch (InterruptedException ie){
+                System.out.println(ie.getMessage());
+            }
+        }
 
-    void addition(){
-        int sum = a+b;
-        System.out.println("Addition: "+sum);
-    }
-
-    void  subtraction(){
-        int sub = a-b;
-        System.out.println("Subtraction: "+ sub);
-    }
-
-    void multiplication(){
-        int multiply = a*b;
-        System.out.println("Multiplication: "+multiply);
     }
 
     public static void main(String[] args) {
-        MyThread th = new MyThread();
-        Thread t = new Thread(th);
-        t.start();
+        MyThread Thread1= new MyThread("Cut the ticket.");
+        MyThread Thread2 = new MyThread("Show the seat number");
+
+        Thread t1 = new Thread(Thread1);
+        Thread t2 = new Thread(Thread2);
+
+        t1.start();
+        t2.start();
+
     }
 }
